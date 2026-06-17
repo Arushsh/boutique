@@ -1,0 +1,212 @@
+.trending-products {
+  padding: 80px 20px;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+.section-title-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-gray);
+}
+
+.pagination-numbers span.active {
+  color: var(--color-accent);
+}
+
+.trending-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: flex-end;
+}
+
+.trending-card {
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.trending-card:hover {
+  transform: translateY(-10px);
+}
+
+.trending-image-container {
+  background-color: var(--color-gray-light);
+  border-radius: 20px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.trending-card:hover .trending-image-container {
+  background: transparent;
+  height: 320px;
+  margin-bottom: 30px;
+  z-index: 2;
+}
+
+.trending-img {
+  max-height: 90%;
+  max-width: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+.trending-card:hover .trending-img {
+  max-height: 110%;
+  max-width: 110%;
+  margin-top: -40px;
+  border-radius: 0;
+}
+
+.hot-bg {
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  right: -10px;
+  bottom: 0;
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  z-index: -1;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.4s ease;
+}
+
+.trending-card:hover .hot-bg {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hot-badge {
+  position: absolute;
+  bottom: -15px;
+  left: 20px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.trending-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.trending-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.trending-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 15px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.trending-card:hover .trending-actions {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.add-cart-btn {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px 0 0 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.icon-btn {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.2);
+  cursor: pointer;
+}
+
+.icon-btn:last-child {
+  border-radius: 0 20px 20px 0;
+}
+
+.see-all-container {
+  text-align: right;
+  margin-top: 40px;
+}
+
+.see-all-link {
+  color: var(--color-accent);
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.see-all-link span {
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .trending-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+  .trending-card:hover { transform: translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+  .trending-products { padding: 50px 16px; }
+  .section-header-row { flex-direction: column; gap: 16px; align-items: center; }
+  .pagination-numbers { display: none; }
+  .trending-name { font-size: 16px; }
+  .trending-price { font-size: 15px; }
+  .trending-image-container { height: 220px; }
+}
+
+@media (max-width: 480px) {
+  .trending-grid {
+    grid-template-columns: 1fr;
+  }
+  .trending-image-container { height: 260px; }
+}
