@@ -25,12 +25,15 @@ services:
         sync: false
 
   # Frontend Static Site
-  - type: static
+  - type: web
     name: aura-boutique-frontend
+    env: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     envVars:
+      - key: NODE_VERSION
+        value: 20
       - key: NODE_ENV
         value: production
       # We tell Vite where to find the backend API. Render provides a standard URL format.
