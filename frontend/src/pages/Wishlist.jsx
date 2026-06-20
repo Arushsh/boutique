@@ -53,7 +53,7 @@ const Wishlist = () => {
                   {item.category && <p className="wishlist-category">{item.category}</p>}
                   <h3 className="wishlist-name">{item.name}</h3>
                   {item.price > 0 && (
-                    <p className="wishlist-price">${item.price.toFixed(2)}</p>
+                    <p className="wishlist-price">₹{item.price.toFixed(2)}</p>
                   )}
                   <button
                     className="btn-primary wishlist-add-btn"

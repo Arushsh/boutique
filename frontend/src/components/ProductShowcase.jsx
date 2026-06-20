@@ -59,7 +59,7 @@ const ProductShowcase = () => {
                   {product.isHot && <span className="overlay-badge">Hot 👜</span>}
                   <h3 className="product-name">{product.name}</h3>
                   <p className="product-desc">{product.description?.substring(0, 50)}...</p>
-                  <p className="product-price">${product.price.toFixed(2)}</p>
+                  <p className="product-price">₹{product.price.toFixed(2)}</p>
                   <div className="product-actions">
                     <button onClick={() => addToWishlist({ id: product._id, ...product })} className="action-btn" aria-label="Add to Wishlist"><Heart size={20} /></button>
                     <button onClick={() => addToCart({ id: product._id, ...product })} className="action-btn" aria-label="Add to Bag"><ShoppingBag size={20} /></button>

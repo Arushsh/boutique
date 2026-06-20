@@ -85,12 +85,16 @@ const Header = () => {
             </Link>
           )}
           
-          <Link to="/wishlist" className="mobile-footer-link" onClick={() => setMobileMenuOpen(false)}>
-            <Heart size={18} /> Wishlist ({wishlistCount})
-          </Link>
-          <Link to="/cart" className="mobile-footer-link" onClick={() => setMobileMenuOpen(false)}>
-            <ShoppingBag size={18} /> Bag ({cartCount})
-          </Link>
+          {isAuthenticated && (
+            <>
+              <Link to="/wishlist" className="mobile-footer-link" onClick={() => setMobileMenuOpen(false)}>
+                <Heart size={18} /> Wishlist ({wishlistCount})
+              </Link>
+              <Link to="/cart" className="mobile-footer-link" onClick={() => setMobileMenuOpen(false)}>
+                <ShoppingBag size={18} /> Bag ({cartCount})
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>,
@@ -117,22 +121,26 @@ const Header = () => {
 
           <div className="header-actions desktop-nav">
             <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-              <Link to="/wishlist" aria-label="Wishlist" style={{ position: 'relative' }}>
-                <Heart size={20} />
-                {wishlistCount > 0 && (
-                  <span style={{ position: 'absolute', top: -8, right: -10, background: 'var(--color-accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
-                    {wishlistCount}
-                  </span>
-                )}
-              </Link>
-              <Link to="/cart" aria-label="Cart" style={{ position: 'relative' }}>
-                <ShoppingBag size={20} />
-                {cartCount > 0 && (
-                  <span style={{ position: 'absolute', top: -8, right: -10, background: 'var(--accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
-                    {cartCount}
-                  </span>
-                )}
-              </Link>
+              {isAuthenticated && (
+                <>
+                  <Link to="/wishlist" aria-label="Wishlist" style={{ position: 'relative' }}>
+                    <Heart size={20} />
+                    {wishlistCount > 0 && (
+                      <span style={{ position: 'absolute', top: -8, right: -10, background: 'var(--color-accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
+                        {wishlistCount}
+                      </span>
+                    )}
+                  </Link>
+                  <Link to="/cart" aria-label="Cart" style={{ position: 'relative' }}>
+                    <ShoppingBag size={20} />
+                    {cartCount > 0 && (
+                      <span style={{ position: 'absolute', top: -8, right: -10, background: 'var(--accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
+                        {cartCount}
+                      </span>
+                    )}
+                  </Link>
+                </>
+              )}
               
               {isAuthenticated ? (
                 <div style={{ position: 'relative', display: 'flex', alignItems: 'center', gap: 15 }}>
@@ -151,14 +159,16 @@ const Header = () => {
           </div>
 
           <div className="mobile-right">
-            <Link to="/cart" aria-label="Cart" className="mobile-icon" style={{ position: 'relative' }}>
-              <ShoppingBag size={22} />
-              {cartCount > 0 && (
-                <span style={{ position: 'absolute', top: -5, right: -8, background: 'var(--accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
-                  {cartCount}
-                </span>
-              )}
-            </Link>
+            {isAuthenticated && (
+              <Link to="/cart" aria-label="Cart" className="mobile-icon" style={{ position: 'relative' }}>
+                <ShoppingBag size={22} />
+                {cartCount > 0 && (
+                  <span style={{ position: 'absolute', top: -5, right: -8, background: 'var(--accent)', color: '#fff', fontSize: '0.65rem', padding: '2px 6px', borderRadius: '10px', fontWeight: 700 }}>
+                    {cartCount}
+                  </span>
+                )}
+              </Link>
+            )}
             <button
               className="hamburger-btn"
               onClick={() => setMobileMenuOpen(true)}

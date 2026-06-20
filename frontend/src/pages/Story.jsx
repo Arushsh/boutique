@@ -68,9 +68,9 @@ const Story = () => {
           <h2 className="section-title">Meet The Creatives</h2>
           <div className="team-grid">
             {[
-              { name: "Elena Rossi", role: "Creative Director", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" },
-              { name: "Sarah Chen", role: "Head of Design", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400" },
-              { name: "Marcus Thorne", role: "Master Tailor", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400" }
+              { name: "Elena Rossi", role: "Creative Director", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.49%20PM.jpeg" },
+              { name: "Sarah Chen", role: "Head of Design", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.50%20PM%20(1).jpeg" },
+              { name: "Marcus Thorne", role: "Master Tailor", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.50%20PM.jpeg" }
             ].map((member, i) => (
               <div key={i} className="team-card">
                 <img src={member.img} alt={member.name} />

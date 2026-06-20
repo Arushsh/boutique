@@ -5,19 +5,19 @@ const testimonials = [
   {
     id: 1,
     name: 'SONIYA DEVIL',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.40%20PM%20(2).jpeg',
     review: 'The quality of the fabric is exceptional. I ordered the designer floral dress and the fit was absolutely perfect. The boutique experience is truly premium.'
   },
   {
     id: 2,
     name: 'CANDY MILLER',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.40%20PM.jpeg',
     review: 'I had an amazing styling session. They helped me find the perfect festive wear for my upcoming event. Customer service is top-notch and highly recommended.'
   },
   {
     id: 3,
     name: 'DR. BRITT BRAKER',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.41%20PM%20(1).jpeg',
     review: 'Beautiful collection of luxury evening wear! I bought a silk saree and the craftsmanship is stunning. Will definitely be returning for more outfits.'
   }
 ];

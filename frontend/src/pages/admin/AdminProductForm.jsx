@@ -20,6 +20,7 @@ const AdminProductForm = () => {
   const [form, setForm] = useState(empty);
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(isEdit);
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -58,6 +59,27 @@ const AdminProductForm = () => {
         ? prev.sizes.filter(s => s !== size)
         : [...prev.sizes, size],
     }));
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    setError('');
+    
+    const formData = new FormData();
+    formData.append('image', file);
+
+    try {
+      const { data } = await api.post('/upload', formData);
+      setForm(p => ({ ...p, image: data.imageUrl }));
+    } catch (err) {
+      console.error('Image upload error:', err);
+      setError(err.response?.data?.error || 'Failed to upload image. Please check Cloudinary config.');
+    } finally {
+      setUploadingImage(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -178,8 +200,21 @@ const AdminProductForm = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             <div className="admin-card">
               <div className="section-title-sm" style={{ marginBottom: 20 }}>Product Image</div>
+              
               <div className="admin-form-group">
-                <label className="admin-label">Image URL *</label>
+                <label className="admin-label">Upload Image *</label>
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  onChange={handleImageUpload} 
+                  className="admin-input" 
+                  style={{ padding: '8px' }}
+                />
+                {uploadingImage && <div style={{ marginTop: 8, fontSize: 14, color: 'var(--color-accent)' }}>Uploading to Cloudinary...</div>}
+              </div>
+
+              <div className="admin-form-group" style={{ marginTop: 15 }}>
+                <label className="admin-label">Or paste Image URL</label>
                 <input className="admin-input" value={form.image} onChange={e => setForm(p => ({ ...p, image: e.target.value }))} placeholder="https://..." required />
               </div>
               {form.image && (
@@ -212,8 +247,8 @@ const AdminProductForm = () => {
               </div>
             </div>
 
-            <button type="submit" disabled={loading} className="admin-btn admin-btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-              {loading ? <><div className="spinner" style={{ width: 16, height: 16, borderWidth: 2 }} /> Saving...</> : <><Save size={16} /> {isEdit ? 'Update Product' : 'Create Product'}</>}
+            <button type="submit" disabled={loading || uploadingImage} className="admin-btn admin-btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
+              {loading ? <><div className="spinner" style={{ width: 16, height: 16, borderWidth: 2 }} /> Saving...</> : uploadingImage ? <><div className="spinner" style={{ width: 16, height: 16, borderWidth: 2 }} /> Uploading Image...</> : <><Save size={16} /> {isEdit ? 'Update Product' : 'Create Product'}</>}
             </button>
           </div>
         </div>

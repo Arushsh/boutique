@@ -10,11 +10,11 @@ const InstagramIcon = ({ size = 24, color = "currentColor" }) => (
 );
 
 const galleryImages = [
-  'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400',
-  'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=400',
-  'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400',
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400',
-  'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400'
+  '/WhatsApp%20Image%202026-06-20%20at%206.29.38%20PM%20(2).jpeg',
+  '/WhatsApp%20Image%202026-06-20%20at%206.29.38%20PM.jpeg',
+  '/WhatsApp%20Image%202026-06-20%20at%206.29.39%20PM%20(1).jpeg',
+  '/WhatsApp%20Image%202026-06-20%20at%206.29.39%20PM.jpeg',
+  '/WhatsApp%20Image%202026-06-20%20at%206.29.40%20PM%20(1).jpeg'
 ];
 
 const InstagramGallery = () => {

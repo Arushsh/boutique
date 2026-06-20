@@ -149,7 +149,7 @@ const Checkout = () => {
                   </div>
                 </div>
                 <button type="submit" disabled={loading || !isAuthenticated || cartItems.length === 0} className="btn-primary w-100 mt-4">
-                  {loading ? 'Processing...' : `Place Order - $${total.toFixed(2)}`}
+                  {loading ? 'Processing...' : `Place Order - ₹${total.toFixed(2)}`}
                 </button>
               </div>
             </form>
@@ -165,7 +165,7 @@ const Checkout = () => {
                     <div className="mini-details">
                       <h4>{item.name}</h4>
                       <p>Qty: {item.quantity}</p>
-                      <p className="mini-price">${item.price.toFixed(2)}</p>
+                      <p className="mini-price">₹{item.price.toFixed(2)}</p>
                     </div>
                   </div>
                 ))}
@@ -176,7 +176,7 @@ const Checkout = () => {
               
               <div className="summary-row total">
                 <span>Total</span>
-                <span>${total.toFixed(2)}</span>
+                <span>₹{total.toFixed(2)}</span>
               </div>
             </div>
           </div>

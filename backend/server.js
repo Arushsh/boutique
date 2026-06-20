@@ -11,6 +11,7 @@ const orderRoutes = require('./routes/orders');
 const userRoutes = require('./routes/users');
 const contactRoutes = require('./routes/contact');
 const settingsRoutes = require('./routes/settings');
+const uploadRoutes = require('./routes/upload');
 const app = express();
 
 // ── Security Middleware ─────────────────────────────────────────────────────
@@ -44,6 +45,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // ── Health Check ────────────────────────────────────────────────────────────
 app.get('/api/health', (req, res) => {

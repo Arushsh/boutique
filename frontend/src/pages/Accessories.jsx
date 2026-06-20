@@ -53,7 +53,7 @@ const Accessories = () => {
                 </div>
                 <div className="accessory-info">
                   <h3>{item.name}</h3>
-                  <p className="accessory-price">${item.price.toFixed(2)}</p>
+                  <p className="accessory-price">₹{item.price.toFixed(2)}</p>
                 </div>
               </div>
             ))}

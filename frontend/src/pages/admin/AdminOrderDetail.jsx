@@ -93,9 +93,9 @@ const AdminOrderDetail = () => {
                           <div style={{ fontSize: '0.75rem', color: 'var(--admin-text-muted)' }}>Size: {item.size}</div>
                         </div>
                       </td>
-                      <td>${item.price.toFixed(2)}</td>
+                      <td>₹{item.price.toFixed(2)}</td>
                       <td>x{item.quantity}</td>
-                      <td style={{ fontWeight: 600 }}>${(item.price * item.quantity).toFixed(2)}</td>
+                      <td style={{ fontWeight: 600 }}>₹{(item.price * item.quantity).toFixed(2)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -106,20 +106,20 @@ const AdminOrderDetail = () => {
               <div style={{ width: 250 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: 'var(--admin-text-muted)', fontSize: '0.85rem' }}>
                   <span>Subtotal</span>
-                  <span>${order.subtotal.toFixed(2)}</span>
+                  <span>₹{order.subtotal.toFixed(2)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: 'var(--admin-text-muted)', fontSize: '0.85rem' }}>
                   <span>Shipping</span>
-                  <span>${order.shippingCost.toFixed(2)}</span>
+                  <span>₹{order.shippingCost.toFixed(2)}</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16, color: 'var(--admin-text-muted)', fontSize: '0.85rem' }}>
                   <span>Tax</span>
-                  <span>${order.tax.toFixed(2)}</span>
+                  <span>₹{order.tax.toFixed(2)}</span>
                 </div>
                 <div style={{ height: 1, background: 'var(--admin-border)', marginBottom: 16 }} />
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800, fontSize: '1.2rem', color: 'var(--admin-accent)' }}>
                   <span>Total</span>
-                  <span>${order.total.toFixed(2)}</span>
+                  <span>₹{order.total.toFixed(2)}</span>
                 </div>
               </div>
             </div>

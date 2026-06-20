@@ -1,0 +1,42 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: aura-boutique-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # You MUST set these securely in the Render Dashboard after connecting the repo!
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+
+  # Frontend Static Site
+  - type: web
+    name: aura-boutique-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # We tell Vite where to find the backend API. Render provides a standard URL format.
+      # You may need to update this to the exact backend URL Render generates.
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: aura-boutique-backend
+          envVarKey: RENDER_EXTERNAL_URL

@@ -129,10 +129,10 @@ const AdminProducts = () => {
                   <span className="badge badge-blue">{p.category}</span>
                 </td>
                 <td>
-                  <div style={{ fontWeight: 700 }}>${p.price.toFixed(2)}</div>
+                  <div style={{ fontWeight: 700 }}>₹{p.price.toFixed(2)}</div>
                   {p.originalPrice && (
                     <div style={{ fontSize: '0.75rem', color: 'var(--admin-text-muted)', textDecoration: 'line-through' }}>
-                      ${p.originalPrice.toFixed(2)}
+                      ₹{p.originalPrice.toFixed(2)}
                     </div>
                   )}
                 </td>

@@ -15,7 +15,7 @@ const Collections = () => {
       <main className="collections-main">
         <section className="split-showcase">
           <div className="split-image">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800" alt="Resort Wear" />
+            <img src="/WhatsApp%20Image%202026-06-20%20at%206.29.42%20PM%20(2).jpeg" alt="Resort Wear" />
           </div>
           <div className="split-text">
             <h2>Resort Wear '24</h2>
@@ -26,7 +26,7 @@ const Collections = () => {
 
         <section className="split-showcase reverse">
           <div className="split-image">
-            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=800" alt="Midnight Glamour" />
+            <img src="/WhatsApp%20Image%202026-06-20%20at%206.29.42%20PM.jpeg" alt="Midnight Glamour" />
           </div>
           <div className="split-text">
             <h2>Midnight Glamour</h2>
@@ -37,7 +37,7 @@ const Collections = () => {
 
         <section className="split-showcase">
           <div className="split-image">
-            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&q=80&w=800" alt="Premium Accessories" />
+            <img src="/WhatsApp%20Image%202026-06-20%20at%206.29.43%20PM%20(1).jpeg" alt="Premium Accessories" />
           </div>
           <div className="split-text">
             <h2>The Finishing Touch</h2>
@@ -52,10 +52,10 @@ const Collections = () => {
             <div className="carousel-wrapper">
               <div className="carousel-track">
                 {[
-                  { title: "Minimalist Essentials", img: "https://images.unsplash.com/photo-1434389670869-c4ee14c7c59e?auto=format&fit=crop&q=80&w=400" },
-                  { title: "Boho Chic", img: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" },
-                  { title: "Power Suits", img: "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?auto=format&fit=crop&q=80&w=400" },
-                  { title: "Vintage Inspired", img: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=400" }
+                  { title: "Minimalist Essentials", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.43%20PM%20(2).jpeg" },
+                  { title: "Boho Chic", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.43%20PM.jpeg" },
+                  { title: "Power Suits", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.44%20PM%20(1).jpeg" },
+                  { title: "Vintage Inspired", img: "/WhatsApp%20Image%202026-06-20%20at%206.29.44%20PM%20(2).jpeg" }
                 ].map((item, i) => (
                   <div key={i} className="carousel-card">
                     <img src={item.img} alt={item.title} />

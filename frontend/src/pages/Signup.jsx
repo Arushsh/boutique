@@ -24,7 +24,7 @@ const Signup = () => {
     <div className="auth-page">
       <div className="auth-layout">
         <div className="auth-image">
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=1000" alt="Fashion Signup" />
+          <img src="/WhatsApp%20Image%202026-06-20%20at%206.29.48%20PM.jpeg" alt="Fashion Signup" />
           <div className="auth-image-overlay">
             <h1>Join Aura</h1>
             <p>Unlock premium collections and exclusive early access.</p>

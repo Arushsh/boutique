@@ -4,6 +4,13 @@ const mongoose = require('mongoose');
 const Product = require('../models/Product');
 const auth = require('../middleware/auth');
 const adminOnly = require('../middleware/adminOnly');
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const router = express.Router();
 
@@ -88,6 +95,18 @@ router.post(
     }
 
     try {
+      if (req.body.image && req.body.image.startsWith('http') && !req.body.image.includes('res.cloudinary.com')) {
+        try {
+          const uploadResult = await cloudinary.uploader.upload(req.body.image, {
+            folder: 'aura_boutique'
+          });
+          req.body.image = uploadResult.secure_url;
+        } catch (uploadErr) {
+          console.error('Failed to upload external URL to Cloudinary:', uploadErr);
+          return res.status(400).json({ error: 'Failed to process the external image URL. Please ensure the link is a valid public image.' });
+        }
+      }
+
       const product = await Product.create(req.body);
       res.status(201).json({ product });
     } catch (err) {
@@ -106,6 +125,18 @@ router.put('/:id', auth, adminOnly, async (req, res) => {
 
     // Prevent overwriting _id
     delete req.body._id;
+
+    if (req.body.image && req.body.image.startsWith('http') && !req.body.image.includes('res.cloudinary.com')) {
+      try {
+        const uploadResult = await cloudinary.uploader.upload(req.body.image, {
+          folder: 'aura_boutique'
+        });
+        req.body.image = uploadResult.secure_url;
+      } catch (uploadErr) {
+        console.error('Failed to upload external URL to Cloudinary:', uploadErr);
+        return res.status(400).json({ error: 'Failed to process the external image URL. Please ensure the link is a valid public image.' });
+      }
+    }
 
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,

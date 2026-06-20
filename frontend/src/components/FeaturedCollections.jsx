@@ -7,28 +7,28 @@ const collections = [
     id: 1,
     title: 'Ethnic Elegance',
     color: '#fca5a5', // Pinkish
-    image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&q=80&w=300',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.34%20PM.jpeg',
     hasButton: true
   },
   {
     id: 2,
     title: 'Contemporary Chic',
     color: '#facc15', // Mustard Yellow
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=300',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.35%20PM%20(1).jpeg',
     hasButton: false
   },
   {
     id: 3,
     title: 'Festive Wear',
     color: '#e5e7eb', // Light Grey/Beige
-    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=300',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.35%20PM.jpeg',
     hasButton: false
   },
   {
     id: 4,
     title: 'Designer Exclusives',
     color: '#78350f', // Brown
-    image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=300',
+    image: '/WhatsApp%20Image%202026-06-20%20at%206.29.36%20PM%20(1).jpeg',
     hasButton: false
   }
 ];

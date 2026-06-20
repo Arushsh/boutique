@@ -57,7 +57,7 @@ const AdminDashboard = () => {
   const statCards = [
     {
       label: 'Total Revenue',
-      value: `$${(stats?.totalRevenue || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${(stats?.totalRevenue || 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       icon: DollarSign,
       color: '#c9a96e',
       bg: 'rgba(201,169,110,0.1)',
@@ -182,7 +182,7 @@ const AdminDashboard = () => {
                     <br />
                     <span style={{ fontSize: '0.75rem', color: 'var(--admin-text-muted)' }}>{order.user?.email}</span>
                   </td>
-                  <td style={{ fontWeight: 700 }}>${order.total?.toFixed(2)}</td>
+                  <td style={{ fontWeight: 700 }}>₹{order.total?.toFixed(2)}</td>
                   <td>
                     <span className={`badge ${statusColor[order.status] || 'badge-gray'}`}>
                       {order.status}

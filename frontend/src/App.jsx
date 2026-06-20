@@ -47,6 +47,14 @@ const AdminRoute = ({ children }) => {
   return children;
 };
 
+// Guard: authenticated users only
+const ProtectedRoute = ({ children }) => {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return null;
+  if (!isAuthenticated) return <Navigate to="/login" replace />;
+  return children;
+};
+
 function Home() {
   const [settings, setSettings] = useState(null);
 
@@ -85,7 +93,7 @@ function Home() {
           headline="Exclusive Festive Collection Launch"
           subheadline="Discover Elegant Styles Crafted For Celebrations"
           ctaText="View Collection"
-          image="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=600"
+          image="/WhatsApp%20Image%202026-06-20%20at%206.29.34%20PM%20(1).jpeg"
           reverse={true}
         />
         <Newsletter />
@@ -111,9 +119,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+          <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
+          <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
 
           {/* Admin Routes */}
           <Route

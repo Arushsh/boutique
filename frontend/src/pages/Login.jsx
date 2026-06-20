@@ -25,7 +25,7 @@ const Login = () => {
     <div className="auth-page">
       <div className="auth-layout">
         <div className="auth-image">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1000" alt="Fashion Login" />
+          <img src="/WhatsApp%20Image%202026-06-20%20at%206.29.45%20PM%20(1).jpeg" alt="Fashion Login" />
           <div className="auth-image-overlay">
             <h1>Welcome Back</h1>
             <p>Access your exclusive boutique account.</p>

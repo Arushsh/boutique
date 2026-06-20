@@ -81,8 +81,8 @@ const NewArrivals = () => {
                 <div className="price-slider">
                   <input type="range" min="0" max="1000" defaultValue="500" />
                   <div className="price-labels">
-                    <span>$0</span>
-                    <span>$1000+</span>
+                    <span>₹0</span>
+                    <span>₹1000+</span>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ const NewArrivals = () => {
                     <div className="arrival-info">
                       <p className="arrival-category">{product.category}</p>
                       <h3 className="arrival-name">{product.name}</h3>
-                      <p className="arrival-price">${product.price.toFixed(2)}</p>
+                      <p className="arrival-price">₹{product.price.toFixed(2)}</p>
                     </div>
                   </div>
                 ))}

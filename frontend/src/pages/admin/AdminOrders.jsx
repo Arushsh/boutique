@@ -101,7 +101,7 @@ const AdminOrders = () => {
                 <td style={{ color: 'var(--admin-text-muted)' }}>
                   {order.items?.length} item{order.items?.length !== 1 ? 's' : ''}
                 </td>
-                <td style={{ fontWeight: 700 }}>${order.total?.toFixed(2)}</td>
+                <td style={{ fontWeight: 700 }}>₹{order.total?.toFixed(2)}</td>
                 <td>
                   <span className={`badge ${order.paymentStatus === 'paid' ? 'badge-green' : 'badge-yellow'}`}>
                     {order.paymentStatus}

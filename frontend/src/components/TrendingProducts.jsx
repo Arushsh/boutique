@@ -64,7 +64,7 @@ const TrendingProducts = () => {
               </div>
               <div className="trending-info">
                 <h3 className="trending-name">{product.name}</h3>
-                <p className="trending-price">${product.price.toFixed(2)}</p>
+                <p className="trending-price">₹{product.price.toFixed(2)}</p>
                 
                 <div className="trending-actions">
                   <button onClick={() => addToWishlist({ id: product._id, ...product })} className="trending-btn" aria-label="Add to Wishlist"><Heart size={20} /></button>
