@@ -5,6 +5,7 @@ import { Heart, ShoppingBag, User, Menu, X, LogOut, Settings } from 'lucide-reac
 import { useAuth } from '../context/AuthContext';
 import { useCart } from '../context/CartContext';
 import './Header.css';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const location = useLocation();
@@ -121,6 +122,7 @@ const Header = () => {
 
           <div className="header-actions desktop-nav">
             <div className="icons" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+              <ThemeToggle />
               {isAuthenticated && (
                 <>
                   <Link to="/wishlist" aria-label="Wishlist" style={{ position: 'relative' }}>
@@ -159,6 +161,7 @@ const Header = () => {
           </div>
 
           <div className="mobile-right">
+            <ThemeToggle style={{ marginRight: '10px' }} />
             {isAuthenticated && (
               <Link to="/cart" aria-label="Cart" className="mobile-icon" style={{ position: 'relative' }}>
                 <ShoppingBag size={22} />

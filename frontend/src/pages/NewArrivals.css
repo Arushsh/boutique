@@ -132,6 +132,7 @@
 .size-btn {
   background: none;
   border: 1px solid var(--color-gray-light);
+  color: var(--color-text);
   padding: 10px 0;
   border-radius: 5px;
   cursor: pointer;
@@ -168,7 +169,7 @@
 
 .arrival-card {
   cursor: pointer;
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: 15px;
   padding: 15px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -221,7 +222,7 @@
 }
 
 .arrival-actions .icon-btn {
-  background: var(--color-white);
+  background: var(--color-surface);
   border: 1px solid var(--color-gray-light);
   color: var(--color-text);
   border-radius: 50%;
@@ -297,7 +298,7 @@
   min-width: 40px;
   height: 40px;
   border: 1px solid var(--color-gray-light);
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-body);

@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import './admin.css';
+import ThemeToggle from '../../components/ThemeToggle';
 
 const navItems = [
   { label: 'Dashboard', to: '/admin', icon: LayoutDashboard, end: true },
@@ -107,6 +108,7 @@ const AdminLayout = () => {
         <div className="admin-topbar">
           <h1>Admin Dashboard</h1>
           <div className="topbar-right">
+            <ThemeToggle />
             <span className="topbar-badge">ADMIN</span>
           </div>
         </div>
